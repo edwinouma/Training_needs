@@ -18,8 +18,9 @@ def calculate_likert_percentages(column):
     return value_counts
 
 
-# Function to create bar charts with Likert scale labels
+# Function to create bar charts with Likert scale labels and dynamic y-axis limits
 def create_likert_bar_chart(data, title):
+    max_y = data.max() + 10  # Add 10% buffer to the maximum value for better visualization
     fig = go.Figure(
         data=[
             go.Bar(
@@ -33,7 +34,7 @@ def create_likert_bar_chart(data, title):
         layout=go.Layout(
             title=title,
             xaxis=dict(title='Response Categories'),
-            yaxis=dict(title='Percentage (%)', range=[0, 100])
+            yaxis=dict(title='Percentage (%)', range=[0, max_y])  # Dynamic y-axis limit
         )
     )
     return fig
