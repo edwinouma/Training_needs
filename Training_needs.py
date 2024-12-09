@@ -5,7 +5,6 @@ import plotly.graph_objects as go
 import streamlit as st
 
 # Set the working directory and load the dataset
-os.chdir('C:/WORK/PERSONAL/EDWIN/Personal/Aga-Kan Foundation')
 df = pd.read_excel("TrainingNeeds.xlsx")
 
 # Define Likert scale categories
